@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>pirataria.net</title>
+  <meta name="theme-color" content="#050505" />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --fg: #8b8b8b;
+      --fg-dim: #5f5f5f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family:
+        "IBM Plex Mono",
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.025), transparent 38%),
+        linear-gradient(180deg, #070707 0%, #030303 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(255,255,255,0.018) 0px,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px,
+          transparent 3px
+        );
+      opacity: 0.18;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      width: min(520px, 86vw);
+      transform: translateY(-3vh);
+      animation: fade-in 900ms ease-out both;
+    }
+
+    p {
+      margin: 0;
+      font-size: clamp(0.72rem, 1.15vw, 0.86rem);
+      line-height: 1.75;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--fg);
+      white-space: pre-line;
+    }
+
+    .domain {
+      display: block;
+      margin-top: 1.35rem;
+      color: var(--fg-dim);
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        filter: blur(2px);
+      }
+
+      to {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <p>A pirataria nasceu quando o homem foi criado à imagem de Deus.
+
+<span class="domain">pirataria.net</span></p>
+  </main>
+</body>
+</html>
